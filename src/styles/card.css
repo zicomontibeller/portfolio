@@ -1,5 +1,5 @@
 @layer components {
-  .zmCard {
+  .zm-card {
     @apply bg-white relative w-full flex flex-col p-6 my-3 sm:p-6 md:p-8 md:py-6 shadow-md hover:shadow-lg rounded;
   }
 

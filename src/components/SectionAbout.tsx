@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin, FaFileLines, FaBook, FaGraduationCap } from "react-icons/fa6";
 
 export interface IEducation {
@@ -10,9 +11,9 @@ export interface IAbout {
   avatarUrl: string;
   name: string;
   tags: string[];
-  githubLink: string;
-  linkedinLink: string;
-  cvLink: string;
+  githubUrl: string;
+  linkedinUrl: string;
+  cvUrl: string;
   biography: string[];
   interests: string[];
   education: IEducation[];
@@ -21,7 +22,7 @@ export interface IAbout {
 interface ISectionAboutProps extends React.HTMLAttributes<HTMLElement>, IAbout {}
 
 export function SectionAbout(props: ISectionAboutProps) {
-  const { avatarUrl, name, tags, githubLink, linkedinLink, cvLink, biography, interests, education, ...restProps } = props;
+  const { avatarUrl, name, tags, githubUrl, linkedinUrl, cvUrl, biography, interests, education, ...restProps } = props;
 
   const iconClass = "h-8 w-8 md:h-10 md:w-10 ";
 
@@ -41,24 +42,24 @@ export function SectionAbout(props: ISectionAboutProps) {
 
           <ul className="flex gap-4 mt-4 text-cyan-600">
             <li>
-              <a href="/#contact" title="Contact" aria-label="envelope">
+              <Link href="/#contact" title="Contact" aria-label="envelope">
                 <FaEnvelope className={ iconClass }/>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={githubLink} target="_blank" rel="noopener" aria-label="github" title="Github">
+              <Link href={githubUrl} target="_blank" rel="noopener" aria-label="github" title="Github">
                 <FaGithub className={ iconClass } />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={linkedinLink} target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn">
+              <Link href={linkedinUrl} target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn">
                 <FaLinkedin className={ iconClass } />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href={cvLink} target="_blank" rel="noopener" aria-label="cv" title="Resume File">
+              <Link href={cvUrl} target="_blank" rel="noopener" aria-label="cv" title="Resume File">
                 <FaFileLines className={ iconClass } />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

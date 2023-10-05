@@ -135,9 +135,9 @@ export default function Home() {
           avatarUrl="/zico-montibeller.jpeg"
           name="Zico Montibeller"
           tags={["Front-End Engineer", "Angular", "ReactJS", "Node.js"]}
-          githubLink="https://github.com/zicomontibeller"
-          linkedinLink="https://www.linkedin.com/in/zicomontibeller/"
-          cvLink="https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view?usp=drive_link"
+          githubUrl="https://github.com/zicomontibeller"
+          linkedinUrl="https://www.linkedin.com/in/zicomontibeller/"
+          cvUrl="https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view?usp=drive_link"
           biography={bio}
           interests={interests}
           education={educationList}
@@ -150,21 +150,6 @@ export default function Home() {
         <SectionExperience
           experiences={experiences}
         />
-
-        <section id="projects" className="zm-projects">
-          <h1>Projects</h1>
-          <div>
-            <div>
-              <a href="#">
-                <img src="https://placehold.co/264x540" height="264" width="540" alt="Lorem Ipsum" loading="lazy"/>
-              </a>
-              <div>
-                <h3>Lorem</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, blanditiis totam? Asperiores incidunt soluta sunt est dolorum! Ducimus eos, sint ipsa illum aut nam suscipit odio, molestias voluptate assumenda nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. A nulla sapiente nihil numquam nobis blanditiis quis veritatis, neque delectus culpa maiores. Minima amet possimus eos quos nam! Quidem, velit libero.</p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section id="contact" className="zm-contact">
           <div>

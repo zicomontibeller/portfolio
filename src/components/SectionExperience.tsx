@@ -3,8 +3,8 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export interface ICompany {
   name: string;
-  subtitle: string;
-  link: string;
+  subtitle?: string;
+  url: string;
 }
 
 export interface IExperience {
@@ -28,10 +28,10 @@ export function SectionExperience(props: ISectionExperienceProps) {
         <h1 className="w-full text-center lg:text-left mb-10 lg:w-1/3">Experience</h1>
         <div className="w-full flex flex-col lg:w-2/3">
           { experiences.map(experience => (
-            <div className="zmCard">
+            <div className="zm-card">
               <h2 className="text-2xl sm:text-3xl">{ experience.name }</h2>
               <Link
-                href={ `http://${experience.company.link}` }
+                href={ `http://${experience.company.url}` }
                 target="_blank"
                 className="text-gray-500 sm:text-xl"
               >
