@@ -3,7 +3,7 @@ import { Header } from "~/components/Header";
 import { IEducation, SectionAbout } from "~/components/SectionAbout";
 import { ISkill, SectionSkills } from "~/components/SectionSkills";
 
-import { api } from "~/utils/api";
+// import { api } from "~/utils/api";
 
 export default function Home() {
   const bio = [
@@ -12,13 +12,7 @@ export default function Home() {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nesciunt ipsum repudiandae delectus tempore? Et, assumenda. Deleniti porro, dolores vel, hic magnam doloribus id reiciendis ducimus a iusto magni minima."
   ]
 
-  const interests = [
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
-    "Lorem ipsum",
-  ];
+  const interests = [];
 
   const educationList:IEducation[] = [
     {
@@ -103,7 +97,6 @@ export default function Home() {
 
       <main>
         <SectionAbout
-          className="bg-sky-50"
           avatarUrl="/zico-montibeller.jpeg"
           name="Zico Montibeller"
           tags={["Front-End Engineer", "Angular", "ReactJS", "Node.js"]}

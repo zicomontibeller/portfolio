@@ -71,16 +71,18 @@ export function SectionAbout(props: ISectionAboutProps) {
           </div>
 
           <div className="flex flex-wrap">
-            <div className="w-full md:w-1/2">
-              <h3 className="font-bold text-2xl mb-4">Interests</h3>
-              <ul>
-                { interests.map(item => (
-                  <li className="flex mb-2">
-                    <FaBook className="mt-1 mr-2 w-5 h-5"/> {item}
-                  </li>
-                )) }
-              </ul>
-            </div>
+            { interests?.length ? (
+                <div className="w-full md:w-1/2">
+                <h3 className="font-bold text-2xl mb-4">Interests</h3>
+                <ul>
+                  { interests.map(item => (
+                    <li className="flex mb-2">
+                      <FaBook className="mt-1 mr-2 w-5 h-5"/> {item}
+                    </li>
+                  )) }
+                </ul>
+              </div>
+            ) : null }
 
             <div className="w-full md:w-1/2 mt-4 md:mt-0">
               <h3 className="font-bold text-2xl mb-4">Education</h3>
