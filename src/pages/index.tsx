@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Header } from "~/components/Header";
 import { IEducation, SectionAbout } from "~/components/SectionAbout";
+import { ISkill, SectionSkills } from "~/components/SectionSkills";
 
 import { api } from "~/utils/api";
 
@@ -27,6 +28,69 @@ export default function Home() {
     }
   ]
 
+  const skills:ISkill[] = [
+    {
+      name: 'angular',
+      description: 'Angular',
+      rating: 100,
+    },
+    {
+      name: 'react',
+      description: 'ReactJS',
+      rating: 100,
+    },
+    {
+      name: 'vue',
+      description: 'VueJS',
+      rating: 70,
+    },
+    {
+      name: 'node',
+      description: 'Node.js',
+      rating: 90,
+    },
+    {
+      name: 'rails',
+      description: 'Ruby on Rails',
+      rating: 60,
+    },
+    {
+      name: 'nextjs',
+      description: 'Next.js',
+      rating: 95,
+    },
+    {
+      name: 'tailwind',
+      description: 'Tailwind',
+      rating: 100,
+    },
+    {
+      name: 'css',
+      description: 'CSS',
+      rating: 85,
+    },
+    {
+      name: 'electron',
+      description: 'ElectronJS',
+      rating: 95,
+    },
+    {
+      name: 'mysql',
+      description: 'MySQL',
+      rating: 85,
+    },
+    {
+      name: 'bass',
+      description: 'Double Bass',
+      rating: 75,
+    },
+    {
+      name: 'composition',
+      description: 'Classical Composer',
+      rating: 50,
+    }
+  ]
+
   return (
     <>
       <Head>
@@ -39,7 +103,7 @@ export default function Home() {
 
       <main>
         <SectionAbout
-          className="bg-gray-50 p-4 md:p-6"
+          className="bg-sky-50"
           avatarUrl="/zico-montibeller.jpeg"
           name="Zico Montibeller"
           tags={["Front-End Engineer", "Angular", "ReactJS", "Node.js"]}
@@ -51,53 +115,9 @@ export default function Home() {
           education={educationList}
         />
 
-        <section id="skills" className="zm-skills">
-          <h1>Skills</h1>
-          <div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-globe"></i>
-              </div>
-              <div>Geospatial</div>
-              <p>90%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fab fa-microsoft"></i>
-              </div>
-              <div>Microsoft Office</div>
-              <p>95%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fab fa-python"></i>
-              </div>
-              <div>Python</div>
-              <p>75%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-book"></i>
-              </div>
-              <div>Curiosity</div>
-              <p>100%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-biking"></i>
-              </div>
-              <div>Biking</div>
-              <p>40%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-robot"></i>
-              </div>
-              <div>Robotics</div>
-              <p>10%</p>
-            </div>
-          </div>
-        </section>
+        <SectionSkills
+          skills={skills}
+        />
 
         <section id="experience" className="zm-experience">
           <h1>Experience</h1>
