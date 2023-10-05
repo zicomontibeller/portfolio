@@ -8,12 +8,15 @@
     @apply hover:text-cyan-500
   }
   h1 {
-    @apply text-2xl;
+    @apply text-5xl mb-6;
   }
   h2 {
     @apply text-xl;
   }
   h3 {
     @apply text-lg font-bold;
+  }
+  section {
+    @apply p-4 md:p-6 mb-6;
   }
 }
