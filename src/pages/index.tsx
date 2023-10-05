@@ -1,11 +1,31 @@
-import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
-import Link from "next/link";
+import { Header } from "~/components/Header";
+import { IEducation, SectionAbout } from "~/components/SectionAbout";
 
 import { api } from "~/utils/api";
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const bio = [
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam dicta cupiditate fuga ducimus voluptate architecto praesentium aliquam iste, earum enim reiciendis quae rerum numquam sequi repellat! Ipsum, soluta eveniet!",
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus repellendus veniam, dolores voluptate dicta possimus commodi cupiditate. Repellendus, sapiente hic perspiciatis consequuntur consequatur sed quos voluptatum, ea voluptates ab voluptatibus.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nesciunt ipsum repudiandae delectus tempore? Et, assumenda. Deleniti porro, dolores vel, hic magnam doloribus id reiciendis ducimus a iusto magni minima."
+  ]
+
+  const interests = [
+    "Lorem ipsum",
+    "Lorem ipsum",
+    "Lorem ipsum",
+    "Lorem ipsum",
+    "Lorem ipsum",
+  ];
+
+  const educationList:IEducation[] = [
+    {
+      title: "Bachelor of Computer Science",
+      year: 2014,
+      institution: "UFSC"
+    }
+  ]
 
   return (
     <>
@@ -15,121 +35,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="sticky top-0 z-10 border-b bg-white pt-2">
-        <h1 className="mb-2 px-4 text-lg font-bold">Portfolio</h1>
-        <div>
-          <ul>
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-          <div>
-            <button>ThemeSelector</button>
-          </div>
-        </div>
-      </header>
-      
-      <main className="page-body">
-        <section id="about" className="zm-about-biography">
-          <div>
-            <div>
-              <div id="profile">
-                <img className="avatar avatar-circle" width="270" height="270" src="https://placehold.co/270x270" alt="Zico Montibeller"/>
-                <div className="portrait-title">
-                  <h2>Zico Montibeller</h2>
-                  <h3>Front-End Engineer | Angular | ReactJS | Node.js</h3>
-                </div>
-                <ul className="network-icon" aria-hidden="true">
-                  <li>
-                    <a href="/#contact" aria-label="envelope">
-                      <i className="fas fa-envelope big-icon"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/zicomontibeller" target="_blank" rel="noopener" aria-label="github">
-                      <i className="fab fa-github big-icon"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/zicomontibeller/" target="_blank" rel="noopener" aria-label="linkedin">
-                      <i className="fab fa-linkedin big-icon"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view?usp=drive_link" target="_blank" rel="noopener" aria-label="cv">
-                      <i className="ai ai-cv big-icon"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <h1>Biography</h1>
+      <Header/>
 
-              <div className="article-style">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam dicta cupiditate fuga ducimus voluptate architecto praesentium aliquam iste, earum enim reiciendis quae rerum numquam sequi repellat! Ipsum, soluta eveniet!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus repellendus veniam, dolores voluptate dicta possimus commodi cupiditate. Repellendus, sapiente hic perspiciatis consequuntur consequatur sed quos voluptatum, ea voluptates ab voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nesciunt ipsum repudiandae delectus tempore? Et, assumenda. Deleniti porro, dolores vel, hic magnam doloribus id reiciendis ducimus a iusto magni minima.</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, est. Reiciendis aliquid provident dolorum consequuntur tempora amet, ab quo dolores, doloremque accusamus eius incidunt maiores esse. Animi voluptate temporibus error!</p>
-              </div>
-              
-              <div>
-                <div>
-                  <div>Interests</div>
-                  <ul className="ul-interests fa-ul mb-0">
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <div>Education</div>
-                  <ul>
-                    <li>
-                      <i className="fa-li fa-solid fa-graduation-cap"></i>
-                      <div className="description">
-                        <p className="course">Lorem Ipsum</p>
-                        <p className="institution">Lorem</p>
-                      </div>
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-graduation-cap"></i>
-                      <div className="description">
-                        <p className="course">Lorem Ipsum</p>
-                        <p className="institution">Lorem</p>
-                      </div>
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-graduation-cap"></i>
-                      <div className="description">
-                        <p className="course">Lorem Ipsum</p>
-                        <p className="institution">Lorem</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <main>
+        <SectionAbout
+          className="bg-gray-50 p-4 md:p-6"
+          avatarUrl="/zico-montibeller.jpeg"
+          name="Zico Montibeller"
+          tags={["Front-End Engineer", "Angular", "ReactJS", "Node.js"]}
+          githubLink="https://github.com/zicomontibeller"
+          linkedinLink="https://www.linkedin.com/in/zicomontibeller/"
+          cvLink="https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view?usp=drive_link"
+          biography={bio}
+          interests={interests}
+          education={educationList}
+        />
 
         <section id="skills" className="zm-skills">
           <h1>Skills</h1>
@@ -257,29 +177,5 @@ export default function Home() {
         </p>
       </footer>
     </>
-  );
-}
-
-function AuthShowcase() {
-  const { data: sessionData } = useSession();
-
-  const { data: secretMessage } = api.example.getSecretMessage.useQuery(
-    undefined, // no input
-    { enabled: sessionData?.user !== undefined }
-  );
-
-  return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-center text-2xl text-white">
-        {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
-        {secretMessage && <span> - {secretMessage}</span>}
-      </p>
-      <button
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
-        onClick={sessionData ? () => void signOut() : () => void signIn()}
-      >
-        {sessionData ? "Sign out" : "Sign in"}
-      </button>
-    </div>
   );
 }
