@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Header } from "~/components/Header";
 import { IEducation, SectionAbout } from "~/components/SectionAbout";
+import { IExperience, SectionExperience } from "~/components/SectionExperience";
 import { ISkill, SectionSkills } from "~/components/SectionSkills";
 
 // import { api } from "~/utils/api";
@@ -12,7 +13,7 @@ export default function Home() {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nesciunt ipsum repudiandae delectus tempore? Et, assumenda. Deleniti porro, dolores vel, hic magnam doloribus id reiciendis ducimus a iusto magni minima."
   ]
 
-  const interests = [];
+  const interests:string[] = [];
 
   const educationList:IEducation[] = [
     {
@@ -85,6 +86,41 @@ export default function Home() {
     }
   ]
 
+  const experiences:IExperience[] = [
+    {
+      name: 'Fullstack (FE-Heavy) Engineer',
+      company: {
+        name: 'Wolven',
+        subtitle: 'Consultancy on user experience and front end development',
+        link: 'www.wolven.com.br'
+      },
+      description: 'Crafting optimal web solutions across diverse platforms, with an unwavering commitment to delivering the ultimate user experience.',
+      location: 'Home Office',
+      period: 'October 2012 - April 2023'
+    },
+    {
+      name: 'Software Engineer',
+      company: {
+        name: 'CONPEDI',
+        subtitle: 'Conselho Nacional de Pesquisa e Pós-graduação em Direito – UFSC (National Council of Research and Post-graduation in Law at UFSC)',
+        link: 'conpedi.org.br'
+      },
+      description: 'Design and develop the web app “publicaDireito” for the company to receive, evaluate, edit and publish academic articles.',
+      location: 'Florianópolis - SC',
+      period: 'September 2010 - September 2012'
+    },
+    {
+      name: 'Web Developer',
+      company: {
+        name: 'LAED',
+        subtitle: 'Laboratório de Ensino a Distância – UFSC (Distance Learning Laboratory at UFSC)'
+      },
+      description: 'Engaged in multiple enhancements for a custom implementation of Moodle, an open source learning platform.',
+      location: 'Florianópolis - SC',
+      period: 'March 2008 - August 2010'
+    }
+  ]
+
   return (
     <>
       <Head>
@@ -112,29 +148,10 @@ export default function Home() {
           skills={skills}
         />
 
-        <section id="experience" className="zm-experience">
-          <h1>Experience</h1>
-          <div>
-            <div>
-              <div>
-                <div>Lorem Ipsum</div>
-                <div>Lorem Ipsum</div>
-                <div>October 2012 – Present <span className="middot-divider"></span>
-                  <span>Home Office</span>
-                </div>
-                <div className="card-text">
-                  <p>Responsibilities include:</p>
-                  <ul>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-                    <li>Doloremque laboriosam qui temporibus modi quam dignissimos sunt. Officiis, aut!</li>
-                    <li>At assumenda nemo nam ut ullam numquam quo placeat ab qui amet.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
+        <SectionExperience
+          experiences={experiences}
+        />
+
         <section id="projects" className="zm-projects">
           <h1>Projects</h1>
           <div>

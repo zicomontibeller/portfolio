@@ -84,7 +84,7 @@ export function SectionAbout(props: ISectionAboutProps) {
               </div>
             ) : null }
 
-            <div className="w-full md:w-1/2 mt-4 md:mt-0">
+            <div className="w-full mt-4 md:mt-0">
               <h3 className="font-bold text-2xl mb-4">Education</h3>
               <ul>
                 { education.map(edu => (
