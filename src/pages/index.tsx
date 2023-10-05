@@ -111,7 +111,8 @@ export default function Home() {
       name: 'Web Developer',
       company: {
         name: 'LAED',
-        subtitle: 'Laboratório de Ensino a Distância – UFSC (Distance Learning Laboratory at UFSC)'
+        subtitle: 'Laboratório de Ensino a Distância – UFSC (Distance Learning Laboratory at UFSC)',
+        link: 'www.led.ufsc.br'
       },
       description: 'Engaged in multiple enhancements for a custom implementation of Moodle, an open source learning platform.',
       location: 'Florianópolis - SC',

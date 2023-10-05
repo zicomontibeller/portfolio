@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { FaLocationDot } from "react-icons/fa6";
 
 export interface ICompany {
   name: string;
   subtitle: string;
-  link?: string;
+  link: string;
 }
 
 export interface IExperience {
@@ -29,13 +30,13 @@ export function SectionExperience(props: ISectionExperienceProps) {
           { experiences.map(experience => (
             <div className="zmCard">
               <h2 className="text-2xl sm:text-3xl">{ experience.name }</h2>
-              <a
-                href={ experience.company.link }
+              <Link
+                href={ `http://${experience.company.link}` }
                 target="_blank"
                 className="text-gray-500 sm:text-xl"
               >
                 <span className="font-bold">{ experience.company.name }</span> - { experience.company.subtitle }
-              </a>
+              </Link>
               <p className="text-gray-400 text-md sm:text-lg flex flex-col">
                 <span>{ experience.period }</span>
                 <span className="flex my-1 items-center">
