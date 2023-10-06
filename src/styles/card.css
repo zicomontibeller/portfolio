@@ -1,9 +1,9 @@
 @layer components {
   .zm-card {
-    @apply bg-white relative w-full flex flex-col p-6 my-3 sm:p-6 md:p-8 md:py-6 shadow-md hover:shadow-lg rounded;
+    @apply bg-white border relative w-full flex flex-col p-6 my-3 sm:p-6 md:p-8 md:py-6 shadow-md hover:shadow-lg rounded;
   }
 
-  .zmCard::before{
+  .zm-card.zm-bullet::before{
     content: '';
     left: -2.3rem;
     top: -1rem;
@@ -12,18 +12,18 @@
     @apply absolute bg-sky-400 rounded-full;
   }
 
-  .zmCard::after{
+  .zm-card.zm-bullet::after{
     content: '';
     left: -3rem;
     top: calc(50% - 0.75rem); 
     @apply absolute bg-white border rounded-full w-6 h-6 my-4 border-sky-500;
   }
 
-  .zmCard:first-child::before{
+  .zm-card.zm-bullet:first-child::before{
     top: calc(50% + 1.25rem);
   }
 
-  .zmCard:last-child::before{
+  .zm-card.zm-bullet:last-child::before{
     bottom: calc(50% - 1.25rem);
   }
 }
