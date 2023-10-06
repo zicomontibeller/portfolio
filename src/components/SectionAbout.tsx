@@ -89,7 +89,7 @@ export function SectionAbout(props: ISectionAboutProps) {
               <h3 className="font-bold text-2xl mb-4">Education</h3>
               <ul>
                 { education.map(edu => (
-                  <li className="flex">
+                  <li className="flex mb-2">
                     <FaGraduationCap className="mt-1 mr-2 w-8 h-6"/>
                     <div>
                       <p>{edu.title}, {edu.year}</p>

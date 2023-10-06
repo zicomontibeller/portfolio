@@ -19,6 +19,11 @@ export default function Home() {
       title: "Bachelor of Computer Science",
       year: 2014,
       institution: "UFSC"
+    },
+    {
+      title: "Electronics Technician",
+      year: 2006,
+      institution: "SENAI"
     }
   ]
 
@@ -172,7 +177,7 @@ export default function Home() {
         <SectionAbout
           avatarUrl="/img/zico-montibeller.jpeg"
           name="Zico Montibeller"
-          tags={["Front-End Engineer", "Angular", "ReactJS", "Node.js"]}
+          tags={["Front-End Engineer"]}
           githubUrl="https://github.com/zicomontibeller"
           linkedinUrl="https://www.linkedin.com/in/zicomontibeller/"
           cvUrl="https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view?usp=drive_link"
