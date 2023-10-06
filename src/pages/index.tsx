@@ -1,11 +1,175 @@
-import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
-import Link from "next/link";
+import { Header } from "~/components/Header";
+import { IEducation, IUser, SectionAbout } from "~/components/SectionAbout";
+import { IExperience, SectionExperience } from "~/components/SectionExperience";
+import { IProject, SectionProject } from "~/components/SectionProjects";
+import { ISkill, SectionSkills } from "~/components/SectionSkills";
 
-import { api } from "~/utils/api";
+// import { api } from "~/utils/api";
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const user:IUser = {
+    avatarUrl: "/img/zico-montibeller.jpeg",
+    name: "Zico Montibeller",
+    email: "zico.montibeller@gmail.com",
+    tags: ["Front-End Engineer"],
+    githubUrl: "https://github.com/zicomontibeller",
+    linkedinUrl: "https://www.linkedin.com/in/zicomontibeller/",
+    cvUrl: "https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view",
+    instagramUrl: "https://www.instagram.com/zico.montibeller/",
+    biography: [
+      "As a passionate front-end enthusiast, I've cultivated expertise across a spectrum of languages, frameworks, and tools, primarily within the realm of front-end development. I wholeheartedly embrace the philosophy that every day presents a fresh opportunity to acquire new knowledge and contribute to a more user-friendly internet. In my role as a software developer, I firmly believe that a day devoid of learning aimed at enhancing coding skills is a day unfulfilled."
+    ],
+    interests: [],
+    education: [
+      {
+        title: "Bachelor of Computer Science",
+        year: 2014,
+        institution: "UFSC"
+      },
+      {
+        title: "Electronics Technician",
+        year: 2006,
+        institution: "SENAI"
+      }
+    ]
+  }
+
+  const skills:ISkill[] = [
+    {
+      name: 'angular',
+      description: 'Angular',
+      rating: 100,
+    },
+    {
+      name: 'react',
+      description: 'ReactJS',
+      rating: 100,
+    },
+    {
+      name: 'vue',
+      description: 'VueJS',
+      rating: 70,
+    },
+    {
+      name: 'node',
+      description: 'Node.js',
+      rating: 90,
+    },
+    {
+      name: 'rails',
+      description: 'Ruby on Rails',
+      rating: 60,
+    },
+    {
+      name: 'nextjs',
+      description: 'Next.js',
+      rating: 90,
+    },
+    {
+      name: 'tailwind',
+      description: 'Tailwind',
+      rating: 100,
+    },
+    {
+      name: 'css',
+      description: 'CSS',
+      rating: 95,
+    },
+    {
+      name: 'electron',
+      description: 'ElectronJS',
+      rating: 90,
+    },
+    {
+      name: 'mysql',
+      description: 'MySQL',
+      rating: 90,
+    },
+    {
+      name: 'bass',
+      description: 'Double Bass',
+      rating: 90,
+    },
+    {
+      name: 'composition',
+      description: 'Classical Composer',
+      rating: 50,
+    }
+  ]
+
+  const experiences:IExperience[] = [
+    {
+      name: 'Fullstack (FE-Heavy) Engineer',
+      company: {
+        name: 'Wolven',
+        subtitle: 'Consultancy on user experience and front end development',
+        url: 'http://www.wolven.com.br'
+      },
+      description: 'Crafting optimal web solutions across diverse platforms, with an unwavering commitment to delivering the ultimate user experience.',
+      location: 'Home Office',
+      period: 'October 2012 - April 2023'
+    },
+    {
+      name: 'Software Engineer',
+      company: {
+        name: 'CONPEDI',
+        subtitle: 'Conselho Nacional de Pesquisa e Pós-graduação em Direito – UFSC (National Council of Research and Post-graduation in Law at UFSC)',
+        url: 'http://conpedi.org.br'
+      },
+      description: 'Design and develop the web app “publicaDireito” for the company to receive, evaluate, edit and publish academic articles.',
+      location: 'Florianópolis - SC',
+      period: 'September 2010 - September 2012'
+    },
+    {
+      name: 'Web Developer',
+      company: {
+        name: 'LAED',
+        subtitle: 'Laboratório de Ensino a Distância – UFSC (Distance Learning Laboratory at UFSC)',
+        url: 'http://led.ufsc.br'
+      },
+      description: 'Engaged in multiple enhancements for a custom implementation of Moodle, an open source learning platform.',
+      location: 'Florianópolis - SC',
+      period: 'March 2008 - August 2010'
+    }
+  ]
+
+  const projects:IProject[] = [
+    {
+      name: 'RPV311 Configurator',
+      companyName: 'General Electric',
+      companyUrl: 'http://ge.com',
+      imgUrl: '/img/ge-energy.jpg',
+      url: 'https://www.gegridsolutions.com/measurement_recording_timesync/catalog/rpv311.htm',
+      description: ["The processing unit RPV311 is a multifunction equipment, developed by General Eletric, that offers a distributed solution designed for the acquisition, monitoring and recording of electrical power generation, transmission or distribution.", " In this project I spearheaded the development of the desktop app that allowed users to configure the RPV311 settings and monitor its status in an ease way. App screenshots in <a href='https://drive.google.com/drive/folders/1BR6hCVHqv27icVZblffjefH5MKRjSfwk?usp=drive_link' target='_blank'>this link</a>."],
+      techs: ['ElectronJS', 'Angular', 'NodeJS', 'Tailwind', 'XML', 'Websocket', 'Storybook', 'Jest']
+    },
+    {
+      name: 'Paywall',
+      companyName: 'Couchsurfing',
+      companyUrl: 'https://couchsurfing.com',
+      imgUrl: '/img/cs.jpg',
+      description: ["CouchSurfing is a hospitality exchange service by which users can request free short-term homestays or interact with other people who are interested in travel.", "Along wtih the web team, we developed several experiments and improvements on Couchsurfing's web platform. Our biggest challenge was to implement a paywall and change its service from user single sign in to be based on user monthly/yearly paid subscriptions, integrating different payments options."],
+      techs: ['Ruby on Rails', 'ReactJS', 'Paypal', 'Stripe', 'Mapbox', 'Cypress', 'Cucumber', 'MySQL', 'Docker']
+    },
+    {
+      name: 'IoT App',
+      companyName: 'WEG',
+      companyUrl: 'https://weg.net',
+      url: 'https://iot.weg.net',
+      imgUrl: '/img/weg-iot-2.jpg',
+      description: ["This innovative app empowers users to seamlessly oversee their residential solar energy systems alongside a suite of other devices offered by the company.", "I engineered the hybrid mobile application and publish its first version for both Apple's and Google's stores. Post the initial release, I assumed the role of instructor, imparting my knowledge to a team of developers, elucidating the intricacies of the app's architecture, and advocating best coding practices to facilitate continuous enhancements"],
+      techs: ['AngularJS', 'Cordova', 'Bootstrap', 'Sass', 'Jest', 'Azure OAuth']
+    },
+    {
+      name: 'Factory Monitor',
+      companyName: 'WEG',
+      companyUrl: 'https://weg.net',
+      imgUrl: '/img/weg.jpg',
+      description: ["Operating worldwide, WEG provides global solutions in the electric engineering, power and automation technology areas. With over a million square meters of commercial and industrial premises, they needed an app to monitor their most valuable subsidized factories.", "I engineered the front-end of this private desktop web app to be touchscreen and to show the status of every feature for every machine in a specific factory in real-time. App screenshots in <a href='https://drive.google.com/file/d/1fc-htMTkydVZ3bxqEUYmBOeRfuHS7C0K/view?usp=drive_link' target='_blank'>this link</a>."],
+      techs: ['VueJS', 'HighchartsJS', 'Typescript', 'Rest API', 'Swagger']
+    },
+  ];
 
   return (
     <>
@@ -15,271 +179,30 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="sticky top-0 z-10 border-b bg-white pt-2">
-        <h1 className="mb-2 px-4 text-lg font-bold">Portfolio</h1>
-        <div>
-          <ul>
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-          <div>
-            <button>ThemeSelector</button>
-          </div>
-        </div>
-      </header>
-      
-      <main className="page-body">
-        <section id="about" className="zm-about-biography">
-          <div>
-            <div>
-              <div id="profile">
-                <img className="avatar avatar-circle" width="270" height="270" src="https://placehold.co/270x270" alt="Zico Montibeller"/>
-                <div className="portrait-title">
-                  <h2>Zico Montibeller</h2>
-                  <h3>Front-End Engineer | Angular | ReactJS | Node.js</h3>
-                </div>
-                <ul className="network-icon" aria-hidden="true">
-                  <li>
-                    <a href="/#contact" aria-label="envelope">
-                      <i className="fas fa-envelope big-icon"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/zicomontibeller" target="_blank" rel="noopener" aria-label="github">
-                      <i className="fab fa-github big-icon"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/zicomontibeller/" target="_blank" rel="noopener" aria-label="linkedin">
-                      <i className="fab fa-linkedin big-icon"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view?usp=drive_link" target="_blank" rel="noopener" aria-label="cv">
-                      <i className="ai ai-cv big-icon"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div>
-              <h1>Biography</h1>
+      <Header/>
 
-              <div className="article-style">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nam dicta cupiditate fuga ducimus voluptate architecto praesentium aliquam iste, earum enim reiciendis quae rerum numquam sequi repellat! Ipsum, soluta eveniet!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus repellendus veniam, dolores voluptate dicta possimus commodi cupiditate. Repellendus, sapiente hic perspiciatis consequuntur consequatur sed quos voluptatum, ea voluptates ab voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nesciunt ipsum repudiandae delectus tempore? Et, assumenda. Deleniti porro, dolores vel, hic magnam doloribus id reiciendis ducimus a iusto magni minima.</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, est. Reiciendis aliquid provident dolorum consequuntur tempora amet, ab quo dolores, doloremque accusamus eius incidunt maiores esse. Animi voluptate temporibus error!</p>
-              </div>
-              
-              <div>
-                <div>
-                  <div>Interests</div>
-                  <ul className="ul-interests fa-ul mb-0">
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-book"></i> Lorem Ipsum
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <div>Education</div>
-                  <ul>
-                    <li>
-                      <i className="fa-li fa-solid fa-graduation-cap"></i>
-                      <div className="description">
-                        <p className="course">Lorem Ipsum</p>
-                        <p className="institution">Lorem</p>
-                      </div>
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-graduation-cap"></i>
-                      <div className="description">
-                        <p className="course">Lorem Ipsum</p>
-                        <p className="institution">Lorem</p>
-                      </div>
-                    </li>
-                    <li>
-                      <i className="fa-li fa-solid fa-graduation-cap"></i>
-                      <div className="description">
-                        <p className="course">Lorem Ipsum</p>
-                        <p className="institution">Lorem</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <main>
+        <SectionAbout
+          user={user}
+        />
 
-        <section id="skills" className="zm-skills">
-          <h1>Skills</h1>
-          <div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-globe"></i>
-              </div>
-              <div>Geospatial</div>
-              <p>90%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fab fa-microsoft"></i>
-              </div>
-              <div>Microsoft Office</div>
-              <p>95%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fab fa-python"></i>
-              </div>
-              <div>Python</div>
-              <p>75%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-book"></i>
-              </div>
-              <div>Curiosity</div>
-              <p>100%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-biking"></i>
-              </div>
-              <div>Biking</div>
-              <p>40%</p>
-            </div>
-            <div>
-              <div className="featurette-icon">
-                <i className="fas fa-robot"></i>
-              </div>
-              <div>Robotics</div>
-              <p>10%</p>
-            </div>
-          </div>
-        </section>
+        <SectionSkills
+          skills={skills}
+        />
 
-        <section id="experience" className="zm-experience">
-          <h1>Experience</h1>
-          <div>
-            <div>
-              <div>
-                <div>Lorem Ipsum</div>
-                <div>Lorem Ipsum</div>
-                <div>October 2012 – Present <span className="middot-divider"></span>
-                  <span>Home Office</span>
-                </div>
-                <div className="card-text">
-                  <p>Responsibilities include:</p>
-                  <ul>
-                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-                    <li>Doloremque laboriosam qui temporibus modi quam dignissimos sunt. Officiis, aut!</li>
-                    <li>At assumenda nemo nam ut ullam numquam quo placeat ab qui amet.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <section id="projects" className="zm-projects">
-          <h1>Projects</h1>
-          <div>
-            <div>
-              <a href="#">
-                <img src="https://placehold.co/264x540" height="264" width="540" alt="Lorem Ipsum" loading="lazy"/>
-              </a>
-              <div>
-                <h3>Lorem</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, blanditiis totam? Asperiores incidunt soluta sunt est dolorum! Ducimus eos, sint ipsa illum aut nam suscipit odio, molestias voluptate assumenda nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. A nulla sapiente nihil numquam nobis blanditiis quis veritatis, neque delectus culpa maiores. Minima amet possimus eos quos nam! Quidem, velit libero.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SectionExperience
+          experiences={experiences}
+        />
 
-        <section id="contact" className="zm-contact">
-          <div>
-            <h1>Contact</h1>
-            <p>If you want to get in touch, send an email or use one of the resources indicated in this page.</p>
-          </div>
-          <div>
-            <ul className="fa-ul">
-              <li>
-                <i className="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-                <span id="person-email">
-                  <a href="mailto:zico.montibeller@gmail.com">zico.montibeller@gmail.com</a>
-                </span>
-              </li>
-              <li>
-                <i className="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-                <span id="person-telephone">
-                  <a href="tel:47996142144">47 996 142 144</a>
-                </span>
-              </li>
-              <li>
-                <i className="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-                <span id="person-address">Jaraguá do Sul, SC</span>
-              </li>
-            </ul>
-          </div>
-        </section>
+        <SectionProject
+          projects={projects}
+        />
       </main>
 
-      <footer>
-        <p>© 2023 Zico Montibeller. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>. Feel free to copy or adapt according to your interest </p>
-        <p>
-          <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
-            <i className="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
-            <i className="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
-            <i className="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
-            <i className="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
-          </a>
-        </p>
+      <footer className="bg-gray-800 text-center text-gray-400 p-4">
+        <p>© { new Date().getUTCFullYear() } Zico Montibeller</p>
+        <p className="text-sm">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>. Feel free to copy or adapt according to your interest </p>
       </footer>
     </>
-  );
-}
-
-function AuthShowcase() {
-  const { data: sessionData } = useSession();
-
-  const { data: secretMessage } = api.example.getSecretMessage.useQuery(
-    undefined, // no input
-    { enabled: sessionData?.user !== undefined }
-  );
-
-  return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-center text-2xl text-white">
-        {sessionData && <span>Logged in as {sessionData.user?.name}</span>}
-        {secretMessage && <span> - {secretMessage}</span>}
-      </p>
-      <button
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
-        onClick={sessionData ? () => void signOut() : () => void signIn()}
-      >
-        {sessionData ? "Sign out" : "Sign in"}
-      </button>
-    </div>
   );
 }
