@@ -22,8 +22,8 @@ export function SectionProject(props: ISectionProjectProps) {
       <div className="container mx-auto">
         <h1 className="text-center">Latest Projects</h1>
         <div className="">
-          { projects.map(project => (
-            <div className="flex flex-col lg:flex-row lg:items-stretch zm-card p-0 mb-8">
+          { projects.map((project, i) => (
+            <div className="flex flex-col lg:flex-row lg:items-stretch zm-card p-0 mb-8" key={`proj-${i}`}>
               <Link
                 href={ project.url ?? project.companyUrl }
                 target="_blank"
@@ -56,8 +56,8 @@ export function SectionProject(props: ISectionProjectProps) {
                 
                 <div className="py-5">
                   {
-                    project.description.map((descP) => {
-                      return <div className="mb-2"><p dangerouslySetInnerHTML={{ __html: descP }} ></p></div>
+                    project.description.map((descP, i) => {
+                      return <div className="mb-2" key={`proj-desc-${i}`}><p dangerouslySetInnerHTML={{ __html: descP }} ></p></div>
                     })
                   }
                 </div>

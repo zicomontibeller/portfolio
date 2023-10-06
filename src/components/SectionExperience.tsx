@@ -27,8 +27,8 @@ export function SectionExperience(props: ISectionExperienceProps) {
       <div className="container mx-auto flex flex-wrap justify-center py-10 md:justify-between">
         <h1 className="w-full text-center lg:text-left mb-10 lg:w-1/3">Experience</h1>
         <div className="w-full flex flex-col lg:w-2/3">
-          { experiences.map(experience => (
-            <div className="zm-card zm-bullet">
+          { experiences.map((experience, i) => (
+            <div className="zm-card zm-bullet" key={`exp-${i}`}>
               <h2 className="text-2xl sm:text-3xl">{ experience.name }</h2>
               <Link
                 href={ experience.company.url }
