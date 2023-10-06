@@ -1,3 +1,26 @@
+@import "./card";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  a {
+    @apply hover:text-cyan-500
+  }
+  h1 {
+    @apply text-5xl mb-12;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg font-bold;
+  }
+  section {
+    @apply p-4 md:p-6 mb-6;
+  }
+  section:nth-child(odd) {
+    @apply bg-sky-50;
+  }
+}
