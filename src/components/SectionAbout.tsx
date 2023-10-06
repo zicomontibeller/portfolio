@@ -65,7 +65,7 @@ export function SectionAbout(props: ISectionAboutProps) {
         </div>
 
         <div id="biography" className="w-full lg:w-2/3 p-4">
-          <h1>Biography</h1>
+          <h1 className="mb-6">Biography</h1>
 
           <div className="flex flex-col gap-6 mb-6">
             { biography.map(p => <p>{p}</p>) }

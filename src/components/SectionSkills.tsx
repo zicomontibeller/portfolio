@@ -58,7 +58,7 @@ export function SectionSkills(props: ISectionSkillsProps) {
 
   return (
     <section id="about" {...restProps} >
-      <h1 className="text-center mb-12">Skills</h1>
+      <h1 className="text-center">Skills</h1>
       <div className="container mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
           { skills.map((skill, i) => (

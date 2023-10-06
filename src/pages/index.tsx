@@ -91,7 +91,7 @@ export default function Home() {
       company: {
         name: 'Wolven',
         subtitle: 'Consultancy on user experience and front end development',
-        url: 'www.wolven.com.br'
+        url: 'http://www.wolven.com.br'
       },
       description: 'Crafting optimal web solutions across diverse platforms, with an unwavering commitment to delivering the ultimate user experience.',
       location: 'Home Office',
@@ -102,7 +102,7 @@ export default function Home() {
       company: {
         name: 'CONPEDI',
         subtitle: 'Conselho Nacional de Pesquisa e Pós-graduação em Direito – UFSC (National Council of Research and Post-graduation in Law at UFSC)',
-        url: 'conpedi.org.br'
+        url: 'http://conpedi.org.br'
       },
       description: 'Design and develop the web app “publicaDireito” for the company to receive, evaluate, edit and publish academic articles.',
       location: 'Florianópolis - SC',
@@ -113,7 +113,7 @@ export default function Home() {
       company: {
         name: 'LAED',
         subtitle: 'Laboratório de Ensino a Distância – UFSC (Distance Learning Laboratory at UFSC)',
-        url: 'www.led.ufsc.br'
+        url: 'http://led.ufsc.br'
       },
       description: 'Engaged in multiple enhancements for a custom implementation of Moodle, an open source learning platform.',
       location: 'Florianópolis - SC',
@@ -153,7 +153,7 @@ export default function Home() {
       companyName: 'WEG',
       companyUrl: 'https://weg.net',
       imgUrl: '/img/weg.jpg',
-      description: ["Operating worldwide, WEG provides global solutions in the electric engineering, power and automation technology areas. With over a million square meters of commercial and industrial premises, they needed an app to monitor their most valuable subsidized factories.", "I engineered the front-end of this private desktop web app to be touchscreen and to show the status of every feature for every machine in a specific factory in real-time. App screenshots in this link."],
+      description: ["Operating worldwide, WEG provides global solutions in the electric engineering, power and automation technology areas. With over a million square meters of commercial and industrial premises, they needed an app to monitor their most valuable subsidized factories.", "I engineered the front-end of this private desktop web app to be touchscreen and to show the status of every feature for every machine in a specific factory in real-time. App screenshots in <a href='https://drive.google.com/file/d/1fc-htMTkydVZ3bxqEUYmBOeRfuHS7C0K/view?usp=drive_link' target='_blank'>this link</a>."],
       techs: ['VueJS', 'HighchartsJS', 'Typescript', 'Rest API', 'Swagger']
     },
   ];

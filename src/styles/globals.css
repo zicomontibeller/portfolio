@@ -9,7 +9,7 @@
     @apply hover:text-cyan-500
   }
   h1 {
-    @apply text-5xl mb-6;
+    @apply text-5xl mb-12;
   }
   h2 {
     @apply text-xl;
