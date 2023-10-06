@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaEnvelope, FaGithub, FaLinkedin, FaFileLines, FaBook, FaGraduationCap } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaLinkedin, FaFileLines, FaBook, FaGraduationCap, FaInstagram } from "react-icons/fa6";
 
 export interface IEducation {
   title: string;
@@ -14,6 +14,7 @@ export interface IUser {
   tags: string[];
   githubUrl: string;
   linkedinUrl: string;
+  instagramUrl: string;
   cvUrl: string;
   biography: string[];
   interests: string[];
@@ -37,9 +38,9 @@ export function SectionAbout(props: ISectionAboutProps) {
             <img className="h-full w-full rounded-full" src={user.avatarUrl} alt={user.name} />
           </div>
 
-          <h2 className="text-3xl md:text-4xl text-center my-2">{user.name}</h2>
+          <h2 className="text-3xl md:text-4xl text-center mt-2">{user.name}</h2>
 
-          <h3 className="md:text-2xl font-thin text-gray-400 text-center">
+          <h3 className="text-2xl font-thin text-gray-400 text-center">
             {user.tags.map((tag, i) => i===0 ? tag : ` | ${tag}`)}
           </h3>
 
@@ -57,6 +58,11 @@ export function SectionAbout(props: ISectionAboutProps) {
             <li>
               <Link href={user.linkedinUrl} target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn">
                 <FaLinkedin className={ iconClass } />
+              </Link>
+            </li>
+            <li>
+              <Link href={user.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+                <FaInstagram className={ iconClass } />
               </Link>
             </li>
             <li>

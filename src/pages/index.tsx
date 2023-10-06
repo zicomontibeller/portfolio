@@ -16,6 +16,7 @@ export default function Home() {
     githubUrl: "https://github.com/zicomontibeller",
     linkedinUrl: "https://www.linkedin.com/in/zicomontibeller/",
     cvUrl: "https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view",
+    instagramUrl: "https://www.instagram.com/zico.montibeller/",
     biography: [
       "As a passionate front-end enthusiast, I've cultivated expertise across a spectrum of languages, frameworks, and tools, primarily within the realm of front-end development. I wholeheartedly embrace the philosophy that every day presents a fresh opportunity to acquire new knowledge and contribute to a more user-friendly internet. In my role as a software developer, I firmly believe that a day devoid of learning aimed at enhancing coding skills is a day unfulfilled."
     ],
@@ -63,7 +64,7 @@ export default function Home() {
     {
       name: 'nextjs',
       description: 'Next.js',
-      rating: 95,
+      rating: 90,
     },
     {
       name: 'tailwind',
@@ -73,22 +74,22 @@ export default function Home() {
     {
       name: 'css',
       description: 'CSS',
-      rating: 85,
+      rating: 95,
     },
     {
       name: 'electron',
       description: 'ElectronJS',
-      rating: 95,
+      rating: 90,
     },
     {
       name: 'mysql',
       description: 'MySQL',
-      rating: 85,
+      rating: 90,
     },
     {
       name: 'bass',
       description: 'Double Bass',
-      rating: 75,
+      rating: 90,
     },
     {
       name: 'composition',
@@ -198,16 +199,9 @@ export default function Home() {
         />
       </main>
 
-      <footer>
-        <p>© 2023 Zico Montibeller. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>. Feel free to copy or adapt according to your interest </p>
-        <p>
-          <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
-            <i className="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
-            <i className="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
-            <i className="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
-            <i className="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
-          </a>
-        </p>
+      <footer className="bg-gray-800 text-center text-gray-400 p-4">
+        <p>© 2023 Zico Montibeller</p>
+        <p className="text-sm">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>. Feel free to copy or adapt according to your interest </p>
       </footer>
     </>
   );
