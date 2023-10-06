@@ -77,7 +77,7 @@ export function SectionAbout(props: ISectionAboutProps) {
           <h1 className="mb-6">Biography</h1>
 
           <div className="flex flex-col gap-6 mb-6">
-            { user.biography.map(p => <p>{p}</p>) }
+            { user.biography.map((p, i) => <p key={`bio-${i}`}>{p}</p>) }
           </div>
 
           <div className="flex flex-wrap">
@@ -85,8 +85,8 @@ export function SectionAbout(props: ISectionAboutProps) {
                 <div className="w-full md:w-1/2">
                 <h3 className="font-bold text-2xl mb-4">Interests</h3>
                 <ul>
-                  { user.interests.map(item => (
-                    <li className="flex mb-2">
+                  { user.interests.map((item, i) => (
+                    <li className="flex mb-2" key={`int-${i}`}>
                       <FaBook className="mt-1 mr-2 w-5 h-5"/> {item}
                     </li>
                   )) }
@@ -97,8 +97,8 @@ export function SectionAbout(props: ISectionAboutProps) {
             <div className="w-full mt-4 md:mt-0">
               <h3 className="font-bold text-2xl mb-4">Education</h3>
               <ul>
-                { user.education.map(edu => (
-                  <li className="flex mb-2">
+                { user.education.map((edu, i) => (
+                  <li className="flex mb-2" key={`edu-${i}`}>
                     <FaGraduationCap className="mt-1 mr-2 w-8 h-6"/>
                     <div>
                       <p>{edu.title}, {edu.year}</p>

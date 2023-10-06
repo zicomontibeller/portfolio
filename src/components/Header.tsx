@@ -9,7 +9,7 @@ export function Header() {
       <div className="justify-between w-100 hidden md:flex">
         <ul className="flex items-center">
           { anchors.map(anchor => (
-            <li className="flex">
+            <li className="flex" key={`anchor-${anchor}`}>
               <a
                 className="p-2 mx-1 capitalize" 
                 href={`#${anchor === 'home' ? '' : anchor}`}
