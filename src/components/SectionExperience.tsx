@@ -23,7 +23,7 @@ export function SectionExperience(props: ISectionExperienceProps) {
   const { experiences, ...restProps } = props;
 
   return (
-    <section id="experience" className="zm-experience">
+    <section id="experience" {...restProps}>
       <div className="container mx-auto flex flex-wrap justify-center py-10 md:justify-between">
         <h1 className="w-full text-center lg:text-left mb-10 lg:w-1/3">Experience</h1>
         <div className="w-full flex flex-col lg:w-2/3">

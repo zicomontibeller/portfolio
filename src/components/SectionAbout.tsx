@@ -7,9 +7,10 @@ export interface IEducation {
   institution: string;
 }
 
-export interface IAbout {
+export interface IUser {
   avatarUrl: string;
   name: string;
+  email: string;
   tags: string[];
   githubUrl: string;
   linkedinUrl: string;
@@ -19,45 +20,47 @@ export interface IAbout {
   education: IEducation[];
 }
 
-interface ISectionAboutProps extends React.HTMLAttributes<HTMLElement>, IAbout {}
+interface ISectionAboutProps extends React.HTMLAttributes<HTMLElement> {
+  user: IUser;
+}
 
 export function SectionAbout(props: ISectionAboutProps) {
-  const { avatarUrl, name, tags, githubUrl, linkedinUrl, cvUrl, biography, interests, education, ...restProps } = props;
+  const { user, ...restProps } = props;
 
   const iconClass = "h-8 w-8 md:h-10 md:w-10 ";
 
   return (
-    <section id="about" {...restProps} >
+    <section id="home" {...restProps} >
       <div className="container mx-auto flex flex-wrap text-lg ">
         <div id="profile" className="flex flex-col items-center w-full lg:w-1/3 p-4">
           <div id="avatar" className="flex h-64 w-64">
-            <img className="h-full w-full rounded-full" src={avatarUrl} alt={name} />
+            <img className="h-full w-full rounded-full" src={user.avatarUrl} alt={user.name} />
           </div>
 
-          <h2 className="text-3xl md:text-4xl text-center my-2">{name}</h2>
+          <h2 className="text-3xl md:text-4xl text-center my-2">{user.name}</h2>
 
           <h3 className="md:text-2xl font-thin text-gray-400 text-center">
-            {tags.map((tag, i) => i===0 ? tag : ` | ${tag}`)}
+            {user.tags.map((tag, i) => i===0 ? tag : ` | ${tag}`)}
           </h3>
 
           <ul className="flex gap-4 mt-4 text-cyan-600">
             <li>
-              <Link href="/#contact" title="Contact" aria-label="envelope">
+              <Link href={`mailto:${user.email}`} title="Contact" aria-label="envelope">
                 <FaEnvelope className={ iconClass }/>
               </Link>
             </li>
             <li>
-              <Link href={githubUrl} target="_blank" rel="noopener" aria-label="github" title="Github">
+              <Link href={user.githubUrl} target="_blank" rel="noopener" aria-label="github" title="Github">
                 <FaGithub className={ iconClass } />
               </Link>
             </li>
             <li>
-              <Link href={linkedinUrl} target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn">
+              <Link href={user.linkedinUrl} target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn">
                 <FaLinkedin className={ iconClass } />
               </Link>
             </li>
             <li>
-              <Link href={cvUrl} target="_blank" rel="noopener" aria-label="cv" title="Resume File">
+              <Link href={user.cvUrl} target="_blank" rel="noopener" aria-label="cv" title="Resume File">
                 <FaFileLines className={ iconClass } />
               </Link>
             </li>
@@ -68,15 +71,15 @@ export function SectionAbout(props: ISectionAboutProps) {
           <h1 className="mb-6">Biography</h1>
 
           <div className="flex flex-col gap-6 mb-6">
-            { biography.map(p => <p>{p}</p>) }
+            { user.biography.map(p => <p>{p}</p>) }
           </div>
 
           <div className="flex flex-wrap">
-            { interests?.length ? (
+            { user.interests?.length ? (
                 <div className="w-full md:w-1/2">
                 <h3 className="font-bold text-2xl mb-4">Interests</h3>
                 <ul>
-                  { interests.map(item => (
+                  { user.interests.map(item => (
                     <li className="flex mb-2">
                       <FaBook className="mt-1 mr-2 w-5 h-5"/> {item}
                     </li>
@@ -88,7 +91,7 @@ export function SectionAbout(props: ISectionAboutProps) {
             <div className="w-full mt-4 md:mt-0">
               <h3 className="font-bold text-2xl mb-4">Education</h3>
               <ul>
-                { education.map(edu => (
+                { user.education.map(edu => (
                   <li className="flex mb-2">
                     <FaGraduationCap className="mt-1 mr-2 w-8 h-6"/>
                     <div>

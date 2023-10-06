@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Header } from "~/components/Header";
-import { IEducation, SectionAbout } from "~/components/SectionAbout";
+import { IEducation, IUser, SectionAbout } from "~/components/SectionAbout";
 import { IExperience, SectionExperience } from "~/components/SectionExperience";
 import { IProject, SectionProject } from "~/components/SectionProjects";
 import { ISkill, SectionSkills } from "~/components/SectionSkills";
@@ -8,24 +8,31 @@ import { ISkill, SectionSkills } from "~/components/SectionSkills";
 // import { api } from "~/utils/api";
 
 export default function Home() {
-  const bio = [
-    "As a passionate front-end enthusiast, I've cultivated expertise across a spectrum of languages, frameworks, and tools, primarily within the realm of front-end development. I wholeheartedly embrace the philosophy that every day presents a fresh opportunity to acquire new knowledge and contribute to a more user-friendly internet. In my role as a software developer, I firmly believe that a day devoid of learning aimed at enhancing coding skills is a day unfulfilled."
-  ]
-
-  const interests:string[] = [];
-
-  const educationList:IEducation[] = [
-    {
-      title: "Bachelor of Computer Science",
-      year: 2014,
-      institution: "UFSC"
-    },
-    {
-      title: "Electronics Technician",
-      year: 2006,
-      institution: "SENAI"
-    }
-  ]
+  const user:IUser = {
+    avatarUrl: "/img/zico-montibeller.jpeg",
+    name: "Zico Montibeller",
+    email: "zico.montibeller@gmail.com",
+    tags: ["Front-End Engineer"],
+    githubUrl: "https://github.com/zicomontibeller",
+    linkedinUrl: "https://www.linkedin.com/in/zicomontibeller/",
+    cvUrl: "https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view",
+    biography: [
+      "As a passionate front-end enthusiast, I've cultivated expertise across a spectrum of languages, frameworks, and tools, primarily within the realm of front-end development. I wholeheartedly embrace the philosophy that every day presents a fresh opportunity to acquire new knowledge and contribute to a more user-friendly internet. In my role as a software developer, I firmly believe that a day devoid of learning aimed at enhancing coding skills is a day unfulfilled."
+    ],
+    interests: [],
+    education: [
+      {
+        title: "Bachelor of Computer Science",
+        year: 2014,
+        institution: "UFSC"
+      },
+      {
+        title: "Electronics Technician",
+        year: 2006,
+        institution: "SENAI"
+      }
+    ]
+  }
 
   const skills:ISkill[] = [
     {
@@ -175,15 +182,7 @@ export default function Home() {
 
       <main>
         <SectionAbout
-          avatarUrl="/img/zico-montibeller.jpeg"
-          name="Zico Montibeller"
-          tags={["Front-End Engineer"]}
-          githubUrl="https://github.com/zicomontibeller"
-          linkedinUrl="https://www.linkedin.com/in/zicomontibeller/"
-          cvUrl="https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view?usp=drive_link"
-          biography={bio}
-          interests={interests}
-          education={educationList}
+          user={user}
         />
 
         <SectionSkills
@@ -197,33 +196,6 @@ export default function Home() {
         <SectionProject
           projects={projects}
         />
-
-        <section id="contact" className="zm-contact">
-          <div>
-            <h1>Contact</h1>
-            <p>If you want to get in touch, send an email or use one of the resources indicated in this page.</p>
-          </div>
-          <div>
-            <ul className="fa-ul">
-              <li>
-                <i className="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-                <span id="person-email">
-                  <a href="mailto:zico.montibeller@gmail.com">zico.montibeller@gmail.com</a>
-                </span>
-              </li>
-              <li>
-                <i className="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-                <span id="person-telephone">
-                  <a href="tel:47996142144">47 996 142 144</a>
-                </span>
-              </li>
-              <li>
-                <i className="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-                <span id="person-address">Jaraguá do Sul, SC</span>
-              </li>
-            </ul>
-          </div>
-        </section>
       </main>
 
       <footer>

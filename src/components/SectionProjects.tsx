@@ -18,7 +18,7 @@ export function SectionProject(props: ISectionProjectProps) {
   const { projects, ...restProps } = props;
 
   return (
-    <section id="projects" className="zm-project">
+    <section id="projects" {...restProps}>
       <div className="container mx-auto">
         <h1 className="text-center">Latest Projects</h1>
         <div className="">

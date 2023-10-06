@@ -1,5 +1,5 @@
 export function Header() {
-  const anchors = ['home', 'projects', 'contact'];
+  const anchors = ['home', 'skills', 'projects'];
 
   return (
     <header className="flex sticky top-0 z-10 border-b bg-white p-2 justify-center md:justify-start shadow-sm">
@@ -12,7 +12,7 @@ export function Header() {
             <li className="flex">
               <a
                 className="p-2 mx-1 capitalize" 
-                href={`#${anchor}`}
+                href={`#${anchor === 'home' ? '' : anchor}`}
               >{anchor}</a>
             </li>
           ))}
