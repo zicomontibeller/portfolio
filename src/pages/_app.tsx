@@ -4,6 +4,7 @@ import { Header } from "~/components/Header";
 import { Analytics } from '@vercel/analytics/react';
 
 import "~/styles/globals.css";
+import { GoogleAnalytics } from "~/components/GoogleAnalytics";
 
 const MyApp: AppType = ({
   Component,
@@ -29,6 +30,7 @@ const MyApp: AppType = ({
       </footer>
 
       <Analytics />
+      <GoogleAnalytics />
     </>
   );
 };
