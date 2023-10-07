@@ -62,7 +62,8 @@ export function SectionSkills(props: ISectionSkillsProps) {
       <div className="container mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
           { skills.map((skill, i) => (
-            <div className="flex flex-col items-center text-lg sm:text-3xl border-1 p-2 sm:p-4 md:p-6 justify-center border-sky-200 shadow-md" key={`skill-${i}`}>
+            <div className="flex flex-col items-center text-lg sm:text-3xl border p-2 sm:p-4 md:p-6 justify-center shadow-md
+            dark:shadow-cyan-900 dark:border-slate-500" key={`skill-${i}`}>
               <div className="text-sky-500 text-5xl md:text-6xl">{ icons[i] }</div>
               <div className="md:mt-2 md:mb-1 text-center">{ skill.description }</div>
               <p className="text-md sm:text-lg text-gray-500">{ skill.rating }%</p>
