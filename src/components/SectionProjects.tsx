@@ -23,7 +23,7 @@ export function SectionProject(props: ISectionProjectProps) {
         <h1 className="text-center">Latest Projects</h1>
         <div className="">
           { projects.map((project, i) => (
-            <div className="flex flex-col lg:flex-row lg:items-stretch zm-card p-0 mb-8" key={`proj-${i}`}>
+            <div className="flex flex-col lg:flex-row lg:items-stretch zm-card p-0 mb-8 zm-project" key={`proj-${i}`}>
               <Link
                 href={ project.url ?? project.companyUrl }
                 target="_blank"
@@ -36,7 +36,7 @@ export function SectionProject(props: ISectionProjectProps) {
                   className="w-full h-full object-cover"
                 />
               </Link>
-              <div className="flex flex-col p-6 lg:w-3/5 border-t lg:border-l lg:border-t-0 text-lg">
+              <div className="flex flex-col p-6 lg:w-3/5 dark:border-none border-t lg:border-l lg:border-t-0 text-lg">
                 <h2 className="text-3xl font-bold">
                   <Link
                     href={ project.url ?? project.companyUrl }

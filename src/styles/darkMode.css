@@ -1,0 +1,31 @@
+@layer components {
+  .zm-dark-mode-toggle {
+    @apply bg-slate-800 text-slate-100 dark:text-slate-800 dark:bg-slate-100 border rounded-full w-10 h-6 relative p-1 overflow-hidden;
+  }
+
+  .zm-dark-mode-toggle span {
+    @apply h-6 w-12 left-1 text-sm absolute top-1 transition-all duration-500 flex;
+  }
+
+  html.dark .zm-dark-mode-toggle span {
+    @apply -left-4;
+  }
+
+  .zm-dark-mode-toggle svg[class*='moon'] {
+    @apply mr-6;
+  }
+
+  .zm-dark-mode-toggle:not(:hover) .zm-sun-fill,
+  .zm-dark-mode-toggle:not(:hover) .zm-moon-star,
+  .zm-dark-mode-toggle:hover .zm-moon,
+  .zm-dark-mode-toggle:hover .zm-sun {
+    @apply hidden;
+  }
+
+  .zm-dark-mode-toggle:not(:hover) .zm-sun,
+  .zm-dark-mode-toggle:not(:hover) .zm-moon,
+  .zm-dark-mode-toggle:hover .zm-moon-star,
+  .zm-dark-mode-toggle:hover .zm-sun-fill {
+    @apply flex;
+  }
+}

@@ -1,12 +1,19 @@
 @import "./card";
+@import "./darkMode";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply text-slate-800;
+  }
+  html.dark {
+    @apply bg-slate-800 text-gray-200;
+  }
   a {
-    @apply hover:text-cyan-500
+    @apply hover:text-cyan-500;
   }
   h1 {
     @apply text-5xl mb-12;
@@ -21,6 +28,6 @@
     @apply p-4 md:p-6 mb-6;
   }
   section:nth-child(odd) {
-    @apply bg-sky-50;
+    @apply bg-sky-50 dark:bg-slate-900;;
   }
 }
