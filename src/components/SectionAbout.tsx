@@ -76,9 +76,11 @@ export function SectionAbout(props: ISectionAboutProps) {
         <div id="biography" className="w-full lg:w-2/3 p-4">
           <h1 className="mb-6">Biography</h1>
 
-          <div className="flex flex-col gap-6 mb-6">
+          <div className="flex flex-col gap-6 mb-10">
             { aboutSection.biography.map((p, i) => <p key={`bio-${i}`}>{p}</p>) }
           </div>
+
+          <hr className="border-cyan-800 border-2 mb-6 md:w-2/3"/>
 
           <div className="flex flex-wrap">
             { aboutSection.interests?.length ? (

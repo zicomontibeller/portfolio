@@ -12,7 +12,7 @@ export type User = {
 
 export const userData:User = {
   about: {
-    avatarUrl: "/img/zico-montibeller.jpeg",
+    avatarUrl: "/img/zico-montibeller.jpg",
     name: "Zico Montibeller",
     email: "zico.montibeller@gmail.com",
     tags: ["Front-End Engineer"],
@@ -171,3 +171,5 @@ export const userData:User = {
     },
   ]
 }
+
+export const userName:string = userData.about.name;

@@ -1,4 +1,3 @@
-
 import { SectionAbout } from "~/components/SectionAbout";
 import { SectionExperience } from "~/components/SectionExperience";
 import { SectionProject } from "~/components/SectionProjects";
