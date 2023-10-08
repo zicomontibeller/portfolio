@@ -18,10 +18,10 @@ export const userData:User = {
     tags: ["Front-End Engineer"],
     githubUrl: "https://github.com/zicomontibeller",
     linkedinUrl: "https://www.linkedin.com/in/zicomontibeller/",
-    cvUrl: "https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view",
+    cvUrl: "/ZicoMontibellerCV.pdf",
     instagramUrl: "https://www.instagram.com/zico.montibeller/",
     biography: [
-      "As a passionate front-end enthusiast, I've cultivated expertise across a spectrum of languages, frameworks, and tools, primarily within the realm of front-end development. I wholeheartedly embrace the philosophy that every day presents a fresh opportunity to acquire new knowledge and contribute to a more user-friendly internet. In my role as a software developer, I firmly believe that a day devoid of learning aimed at enhancing coding skills is a day unfulfilled."
+      "As a passionate front-end enthusiast, I've cultivated expertise across a spectrum of languages, frameworks, and tools, primarily within the realm of front-end development.", "I thrive in fast-paced environments and have a strong desire to continually grow and master my craft. I relish the challenges that come with working in dynamic settings, as they push me to constantly expand my skillset and stay at the forefront of industry trends. With a natural curiosity and an insatiable thirst for knowledge, I possess the ability and the drive to quickly learn new concepts and technologies, allowing me to adapt to ever-evolving landscapes with ease trough effective communication and time management.", "Born and raised in Jaraguá do Sul (JS for short), I find it amusing that I ended up developing a passion for working with Javascript (also JS for short). It's almost as if it was destined for me to immerse myself in the world of JS, given the connection to my hometown's initials. This serendipitous connection adds an extra layer of joy and purpose to my work.", "In my spare time, I am an amateur musician, playing both the double bass in my city's orchestra and the bass guitar in my rock band. I also enjoy travelling and solving puzzles, whether it be unraveling escape rooms or challenging my mind with custom sudokus."
     ],
     interests: [],
     education: [
@@ -61,7 +61,7 @@ export const userData:User = {
     {
       name: 'rails',
       description: 'Ruby on Rails',
-      rating: 60,
+      rating: 70,
     },
     {
       name: 'nextjs',
@@ -96,7 +96,7 @@ export const userData:User = {
     {
       name: 'composition',
       description: 'Classical Composer',
-      rating: 50,
+      rating: 60,
     }
   ],
   experiences: [
@@ -136,13 +136,21 @@ export const userData:User = {
   ],
   projects: [
     {
+      name: 'Portfolio',
+      companyName: 'Zico Montibeller',
+      companyUrl: 'http://www.zicomontibeller.dev',
+      imgUrl: '/img/zico-fisl.jpg',
+      description: ["As a means to stay updated with the latest technologies and also provide a platform to highlight my skills, experiences, and achievements in an engaging and visually appealing way. Through the utilization of NextJS and ReactJS, I have been able to create a dynamic and user-friendly portfolio that represents my dedication to continuous growth and improvement in the field of web development.", "Furthermore, this project allowed me to showcase my ability to design and structure information effectively. By carefully curating the content and organizing it into easily navigable sections, I aimed to provide visitors with a comprehensive overview of my professional journey."],
+      techs: ['ReactJS', 'NextJS', 'Typescript', 'Tailwind']
+    },
+    {
       name: 'RPV311 Configurator',
       companyName: 'General Electric',
       companyUrl: 'http://ge.com',
       imgUrl: '/img/ge-energy.jpg',
       url: 'https://www.gegridsolutions.com/measurement_recording_timesync/catalog/rpv311.htm',
       description: ["The processing unit RPV311 is a multifunction equipment, developed by General Eletric, that offers a distributed solution designed for the acquisition, monitoring and recording of electrical power generation, transmission or distribution.", " In this project I spearheaded the development of the desktop app that allowed users to configure the RPV311 settings and monitor its status in an ease way. App screenshots in <a href='https://drive.google.com/drive/folders/1BR6hCVHqv27icVZblffjefH5MKRjSfwk?usp=drive_link' target='_blank'>this link</a>."],
-      techs: ['ElectronJS', 'Angular', 'NodeJS', 'Tailwind', 'XML', 'Websocket', 'Storybook', 'Jest']
+      techs: ['ElectronJS', 'Angular', 'Typescript', 'NodeJS', 'Tailwind', 'XML', 'Websocket', 'Storybook', 'Jest']
     },
     {
       name: 'Paywall',
