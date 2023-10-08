@@ -18,7 +18,7 @@ export const userData:User = {
     tags: ["Front-End Engineer"],
     githubUrl: "https://github.com/zicomontibeller",
     linkedinUrl: "https://www.linkedin.com/in/zicomontibeller/",
-    cvUrl: "https://drive.google.com/file/d/1fUayKZHsHR1UTMGdNpNuQdf0U2grRYaa/view",
+    cvUrl: "/ZicoMontibellerCV.pdf",
     instagramUrl: "https://www.instagram.com/zico.montibeller/",
     biography: [
       "As a passionate front-end enthusiast, I've cultivated expertise across a spectrum of languages, frameworks, and tools, primarily within the realm of front-end development. I wholeheartedly embrace the philosophy that every day presents a fresh opportunity to acquire new knowledge and contribute to a more user-friendly internet. In my role as a software developer, I firmly believe that a day devoid of learning aimed at enhancing coding skills is a day unfulfilled."
