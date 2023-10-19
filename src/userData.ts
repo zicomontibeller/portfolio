@@ -27,13 +27,17 @@ export const userData:User = {
     education: [
       {
         title: "Bachelor of Computer Science",
+        subtitle: "Valedictorian Speech",
+        subtitleUrl: "https://www.youtube.com/watch?v=i4T6QyBxkNA",
         year: 2014,
-        institution: "UFSC"
+        institution: "UFSC - Universidade Federal de Santa Catarina",
+        location: "Florianópolis, SC - Brazil"
       },
       {
         title: "Electronics Technician",
         year: 2006,
-        institution: "SENAI"
+        institution: "SENAI - Serviço Nacional de Aprendizagem Industrial",
+        location: "Jaraguá do Sul, SC - Brazil",
       }
     ]
   },
@@ -56,17 +60,17 @@ export const userData:User = {
     {
       name: 'node',
       description: 'Node.js',
-      rating: 90,
+      rating: 100,
     },
     {
       name: 'rails',
       description: 'Ruby on Rails',
-      rating: 70,
+      rating: 80,
     },
     {
       name: 'nextjs',
       description: 'Next.js',
-      rating: 90,
+      rating: 100,
     },
     {
       name: 'tailwind',
