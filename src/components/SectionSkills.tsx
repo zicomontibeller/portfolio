@@ -66,7 +66,7 @@ export function SectionSkills(props: ISectionSkillsProps) {
             dark:shadow-cyan-900 dark:border-slate-500" key={`skill-${i}`}>
               <div className="text-sky-500 text-5xl md:text-6xl">{ icons[i] }</div>
               <div className="md:mt-2 md:mb-1 text-center">{ skill.description }</div>
-              <p className="text-md sm:text-lg text-gray-500">{ skill.rating }%</p>
+              <p className={`text-md sm:text-lg text-gray-500 ${skill.name === 'css' ? "w-full text-right" : ""}`}>{ skill.rating }%</p>
             </div>
           ))}
         </div>

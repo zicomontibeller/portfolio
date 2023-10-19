@@ -2,33 +2,35 @@
   .zm-card {
     @apply bg-white border relative w-full flex flex-col p-6 my-3 sm:p-6 md:p-8 md:py-6 shadow-md hover:shadow-lg rounded;
     @apply dark:shadow-cyan-950 dark:bg-slate-950 dark:text-gray-300 dark:border-cyan-900;
-  }
+    
+    &.zm-project {
+      @apply dark:bg-slate-900 dark:border-slate-800;
+    }
 
-  .zm-card.zm-project {
-    @apply dark:bg-slate-900 dark:border-slate-800;
-  }
+    &.zm-bullet {
+      &::before{
+        content: '';
+        left: -2.3rem;
+        top: -1rem;
+        bottom: -1rem;
+        width: 1px;
+        @apply absolute bg-sky-400 rounded-full;
+      }
 
-  .zm-card.zm-bullet::before{
-    content: '';
-    left: -2.3rem;
-    top: -1rem;
-    bottom: -1rem;
-    width: 1px;
-    @apply absolute bg-sky-400 rounded-full;
-  }
+      &::after{
+        content: '';
+        left: -3rem;
+        top: calc(50% - 0.75rem); 
+        @apply absolute bg-white dark:bg-cyan-900 border rounded-full w-6 h-6 my-4 border-sky-500;
+      }
 
-  .zm-card.zm-bullet::after{
-    content: '';
-    left: -3rem;
-    top: calc(50% - 0.75rem); 
-    @apply absolute bg-white dark:bg-cyan-900 border rounded-full w-6 h-6 my-4 border-sky-500;
-  }
+      &:first-child::before{
+        top: calc(50% + 1.25rem);
+      }
 
-  .zm-card.zm-bullet:first-child::before{
-    top: calc(50% + 1.25rem);
-  }
-
-  .zm-card.zm-bullet:last-child::before{
-    bottom: calc(50% - 1.25rem);
+      &:last-child::before{
+        bottom: calc(50% - 1.25rem);
+      }
+    }
   }
 }
