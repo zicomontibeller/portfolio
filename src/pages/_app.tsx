@@ -17,6 +17,7 @@ const MyApp: AppType = ({
       <Head>
         <title>{ `${userName} - Portfolio` }</title>
         <meta name="description" content={`${ userName }'s Portfolio`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

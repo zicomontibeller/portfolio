@@ -1,10 +1,14 @@
 import Link from "next/link";
-import { FaEnvelope, FaGithub, FaLinkedin, FaFileLines, FaBook, FaGraduationCap, FaInstagram } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaLinkedin, FaFileLines, FaBook, FaGraduationCap, FaInstagram, FaLocationDot, FaYoutube } from "react-icons/fa6";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export interface IEducation {
   title: string;
+  subtitle?: string;
+  subtitleUrl?: string;
   year: number;
   institution: string;
+  location: string;
 }
 
 export interface IAbout {
@@ -103,8 +107,24 @@ export function SectionAbout(props: ISectionAboutProps) {
                   <li className="flex mb-2" key={`edu-${i}`}>
                     <FaGraduationCap className="mt-1 mr-2 w-8 h-6"/>
                     <div>
-                      <p>{edu.title}, {edu.year}</p>
-                      <p className="text-gray-400">{edu.institution}</p>
+                      <p className="text-2xl">{edu.title}, {edu.year}</p>
+                      <div className="text-gray-500">
+                        <p className="text-xl">{edu.institution}</p>
+                        <p className="flex align-middle"><FaLocationDot className="mr-2 h-6 text-sm"/><span>{edu.location}</span></p>
+                      </div>
+                      { 
+                        !!edu.subtitle && <div>
+                          
+                          { !!edu.subtitleUrl
+                            ? (
+                              <Link href={edu.subtitleUrl} target="_blank" className="text-sky-800 flex mt-2">
+                                <FaYoutube className="mr-2 h-8"/>{edu.subtitle}<FaExternalLinkAlt className="ml-2 h-3"/>
+                              </Link>)
+                            : <p className="text-gray-500">{ edu.subtitle }</p>
+                          }
+                        </div>
+                      }
+                      { i+1 < aboutSection.education.length && <hr className="mt-4 mb-2 "/> }
                     </div>
                   </li>
                 ))}
