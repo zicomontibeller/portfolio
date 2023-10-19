@@ -8,9 +8,9 @@
 @layer base {
   html {
     @apply text-slate-800;
-  }
-  html.dark {
-    @apply bg-slate-800 text-gray-200;
+    &.dark{
+      @apply bg-slate-800 text-gray-200;
+    }
   }
   a {
     @apply hover:text-cyan-500;
