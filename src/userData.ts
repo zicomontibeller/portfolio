@@ -80,7 +80,7 @@ export const userData:User = {
     {
       name: 'css',
       description: 'CSS',
-      rating: 95,
+      rating: 99,
     },
     {
       name: 'electron',
