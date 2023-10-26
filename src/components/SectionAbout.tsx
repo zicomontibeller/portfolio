@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin, FaFileLines, FaBook, FaGraduationCap, FaInstagram, FaLocationDot, FaYoutube } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { trackGoogleClick } from "~/utils/GoogleAnalytics";
 
 export interface IEducation {
   title: string;
@@ -29,6 +30,10 @@ interface ISectionAboutProps extends React.HTMLAttributes<HTMLElement> {
   aboutSection: IAbout;
 }
 
+const trackSocialClick = (socialTarget:string) => {
+  trackGoogleClick(`social_${socialTarget}`);
+}
+
 export function SectionAbout(props: ISectionAboutProps) {
   const { aboutSection, ...restProps } = props;
 
@@ -50,27 +55,27 @@ export function SectionAbout(props: ISectionAboutProps) {
 
           <ul className="flex gap-4 mt-4 text-cyan-600">
             <li>
-              <Link href={`mailto:${aboutSection.email}`} title="Contact" aria-label="envelope">
+              <Link onClick={() => trackSocialClick('email')} href={`mailto:${aboutSection.email}`} title="Contact" aria-label="envelope">
                 <FaEnvelope className={ iconClass }/>
               </Link>
             </li>
             <li>
-              <Link href={aboutSection.githubUrl} target="_blank" rel="noopener" aria-label="github" title="Github">
+              <Link onClick={() => trackSocialClick('github')} href={aboutSection.githubUrl} target="_blank" rel="noopener" aria-label="github" title="Github">
                 <FaGithub className={ iconClass } />
               </Link>
             </li>
             <li>
-              <Link href={aboutSection.linkedinUrl} target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn">
+              <Link onClick={() => trackSocialClick('linkedin')} href={aboutSection.linkedinUrl} target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn">
                 <FaLinkedin className={ iconClass } />
               </Link>
             </li>
             <li>
-              <Link href={aboutSection.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+              <Link onClick={() => trackSocialClick('instagram')} href={aboutSection.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
                 <FaInstagram className={ iconClass } />
               </Link>
             </li>
             <li>
-              <Link href={aboutSection.cvUrl} target="_blank" rel="noopener" aria-label="cv" title="Resume File">
+              <Link onClick={() => trackSocialClick('cv')} href={aboutSection.cvUrl} target="_blank" rel="noopener" aria-label="cv" title="Resume File">
                 <FaFileLines className={ iconClass } />
               </Link>
             </li>
@@ -117,7 +122,7 @@ export function SectionAbout(props: ISectionAboutProps) {
                           
                           { !!edu.subtitleUrl
                             ? (
-                              <Link href={edu.subtitleUrl} target="_blank" className="text-sky-800 flex mt-2">
+                              <Link href={edu.subtitleUrl} target="_blank" className="text-sky-800 flex mt-2" onClick={() => trackGoogleClick("youtube_speech")}>
                                 <FaYoutube className="mr-2 h-8"/>{edu.subtitle}<FaExternalLinkAlt className="ml-2 h-3"/>
                               </Link>)
                             : <p className="text-gray-500">{ edu.subtitle }</p>
