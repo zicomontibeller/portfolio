@@ -4,7 +4,7 @@ import { Header } from "~/components/Header";
 import "~/styles/globals.css";
 
 import { Analytics } from '@vercel/analytics/react';
-import { GoogleAnalytics } from "~/components/GoogleAnalytics";
+import { GoogleAnalytics } from "~/utils/GoogleAnalytics";
 
 import { userName } from "~/userData";
 

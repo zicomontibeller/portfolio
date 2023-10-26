@@ -14,6 +14,9 @@ export default function useDarkMode():[boolean | null, Dispatch<boolean>] {
       document.documentElement.classList.toggle("light", !enabled)
       document.documentElement.classList.toggle("dark", enabled)
       localStorage.setItem('darkMode', JSON.stringify(enabled));
+      gtag('event', 'click', {
+        target: 'switchDarkMode'
+      });
     }
   }, [enabled])
 
