@@ -4,14 +4,15 @@ interface IPaginationProps<T> extends React.HTMLAttributes<HTMLElement> {
   items: T[];
   onPageChange?: (page: number) => any;
   initialPage?: number;
+  numberPages?: number;
 }
 
 export const ITEMS_PER_PAGE = 4;
 
 export function Pagination(props: IPaginationProps<any>){
-  const { items, initialPage, onPageChange, ...restProps } = props;
+  const { items, initialPage, numberPages, onPageChange, ...restProps } = props;
   const [currentPage, setCurrentPage] = useState(initialPage || 1);
-  const pagesCount = Math.ceil(items.length / ITEMS_PER_PAGE);
+  const pagesCount = numberPages || Math.ceil(items.length / ITEMS_PER_PAGE);
 
   if (pagesCount <= 1) return null;
 

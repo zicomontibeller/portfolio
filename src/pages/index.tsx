@@ -11,9 +11,7 @@ export default function Home() {
         aboutSection={userData.about}
       />
 
-      <SectionSkills
-        skills={userData.skills}
-      />
+      <SectionSkills/>
 
       <SectionExperience
         experiences={userData.experiences}
