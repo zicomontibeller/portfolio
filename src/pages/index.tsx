@@ -19,9 +19,11 @@ export default function Home() {
         experiences={userData.experiences}
       />
 
+      {/* 
       <SectionProject
         projects={userData.projects}
       />
+       */}
     </>
   );
 }
